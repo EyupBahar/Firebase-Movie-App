@@ -12,8 +12,7 @@ const setVoteClass = (vote) => {
   }
 };
 
-const MovieCard = (movie) => {
-  const { title, poster_path, overview, vote_average } = movie;
+const MovieCard = ({ title, poster_path, overview, vote_average }) => {
   return (
     <div className="movie">
       <img src={IMG_API + poster_path} alt="movie-poster" />
