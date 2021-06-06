@@ -7,6 +7,7 @@ const SEARCH_API =
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
+  console.log("movies", movies);
   const [searcTerm, setSearcTerm] = useState("");
 
   useEffect(() => {
@@ -16,10 +17,17 @@ const Main = () => {
   const getMovies = (API) => {
     fetch(API)
       .then((res) => res.json())
-      .then((res) => setMovies(res));
+      .then((res) => setMovies(res.results));
   };
 
-  return <div>MAIN</div>;
+  return (
+    <div>
+      {movies.map((movie) => (
+        <p>{movie.original_title}</p>
+      ))}
+      }
+    </div>
+  );
 };
 
 export default Main;
