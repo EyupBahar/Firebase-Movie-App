@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import MovieCard from "../components/MovieCard";
 const FEATURED_API =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const SEARCH_API =
@@ -39,7 +39,7 @@ const Main = () => {
       </form>
       <div className="movie-container">
         {movies.map((movie) => (
-          <p>{movie.original_title}</p>
+          <MovieCard>{movie.original_title}</MovieCard>
         ))}
       </div>
     </>
