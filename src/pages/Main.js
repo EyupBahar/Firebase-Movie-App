@@ -8,7 +8,7 @@ const SEARCH_API =
 const Main = () => {
   const [movies, setMovies] = useState([]);
   console.log("movies", movies);
-  const [searcTerm, setSearcTerm] = useState("Star");
+  const [searcTerm, setSearcTerm] = useState("");
 
   useEffect(() => {
     getMovies(FEATURED_API);
@@ -19,18 +19,30 @@ const Main = () => {
       .then((res) => res.json())
       .then((res) => setMovies(res.results));
   };
-
-  if (setSearcTerm) {
-    getMovies(SEARCH_API + searcTerm);
-  }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (setSearcTerm) {
+      getMovies(SEARCH_API + searcTerm);
+      setSearcTerm("");
+    }
+  };
 
   return (
-    <div>
-      {movies.map((movie) => (
-        <p>{movie.original_title}</p>
-      ))}
-      }
-    </div>
+    <>
+      <form onSubmit={handleSearch}>
+        <input
+          type="search"
+          className="search-input"
+          placeholder="Search a movie..."
+          onChange={(e) => setSearcTerm(e.target.value)}
+        />
+      </form>
+      <div className="movie-container">
+        {movies.map((movie) => (
+          <p>{movie.original_title}</p>
+        ))}
+      </div>
+    </>
   );
 };
 
