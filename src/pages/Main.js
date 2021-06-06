@@ -8,7 +8,7 @@ const SEARCH_API =
 const Main = () => {
   const [movies, setMovies] = useState([]);
   console.log("movies", movies);
-  const [searcTerm, setSearcTerm] = useState("");
+  const [searcTerm, setSearcTerm] = useState("Star");
 
   useEffect(() => {
     getMovies(FEATURED_API);
@@ -19,6 +19,10 @@ const Main = () => {
       .then((res) => res.json())
       .then((res) => setMovies(res.results));
   };
+
+  if (setSearcTerm) {
+    getMovies(SEARCH_API + searcTerm);
+  }
 
   return (
     <div>
