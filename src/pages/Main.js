@@ -41,7 +41,7 @@ const Main = () => {
       </form>
       <div className="movie-container">
         {movies.map((movie) => (
-          <MovieCard {...movie} />
+          <MovieCard key={movie.id} {...movie} />
         ))}
       </div>
     </>
