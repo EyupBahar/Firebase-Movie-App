@@ -19,8 +19,10 @@ const Main = () => {
       .then((res) => res.json())
       .then((res) => setMovies(res.results));
   };
+
   const handleSearch = (e) => {
     e.preventDefault();
+
     if (setSearcTerm) {
       getMovies(SEARCH_API + searcTerm);
       setSearcTerm("");
@@ -39,7 +41,7 @@ const Main = () => {
       </form>
       <div className="movie-container">
         {movies.map((movie) => (
-          <MovieCard>{movie.original_title}</MovieCard>
+          <MovieCard {...movie} />
         ))}
       </div>
     </>
