@@ -1,50 +1,26 @@
 import React, { useState } from "react";
-import { createUser } from "../auth/firebase";
+import { SignIn, SignUpProvider } from "../auth/firebase";
+import { useHistory } from "react-router-dom";
 
-const Register = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+const Login = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log({ firstName, lastName, email, password });
+  const handleLogin = () => {
+    SignIn(email, password, history);
+  };
 
-  const handleRegister = () => {
-    createUser(email, password);
+  const handleProvider = () => {
+    SignUpProvider();
+    history.push("/");
   };
 
   return (
     <div className="register">
-      <div className="form-image">
-        <img src={"https://picsum.photos/1200/900"} alt="sample" />
-      </div>
       <div className="register-form">
-        <h1 className="form-title display-3">Register</h1>
-        <form id="register">
-          <div className="mb-3">
-            <label for="first-name" className="form-label display-4">
-              First Name
-            </label>
-            <input
-              type="first-name"
-              className="form-control"
-              id="first-name"
-              placeholder="Enter your first name..."
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label for="last-name" className="form-label display-4">
-              Last Name
-            </label>
-            <input
-              type="last-name"
-              className="form-control"
-              id="last-name"
-              placeholder="Enter your last name..."
-              onChange={(e) => setLastName(e.target.value)}
-            />
-          </div>
+        <h1 className="form-title display-3">Login</h1>
+        <form id="login">
           <div className="mb-3">
             <label for="email" className="form-label display-4">
               Email
@@ -72,13 +48,22 @@ const Register = () => {
           <input
             type="button"
             className="btn btn-primary form-control"
-            value="Register"
-            onClick={handleRegister}
+            value="Login"
+            onClick={handleLogin}
           />
         </form>
+        <button
+          className="btn btn-primary form-control"
+          onClick={handleProvider}
+        >
+          Continue with Google
+        </button>
+      </div>
+      <div className="form-image">
+        <img src={"https://picsum.photos/1200/900"} alt="sample" />
       </div>
     </div>
   );
 };
 
-export default Register;
+export default Login;

@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-import { createUser } from "../auth/firebase";
+import { createUser, SignUpProvider } from "../auth/firebase";
+import { useHistory } from "react-router-dom";
 
 const Register = () => {
+  const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log({ firstName, lastName, email, password });
-
   const handleRegister = () => {
-    createUser(email, password);
+    const displayName = `${firstName} ${lastName}`;
+    createUser(email, password, displayName, history);
+    // history.push('/')
+  };
+
+  const handleProvider = () => {
+    SignUpProvider();
+    history.push("/");
   };
 
   return (
@@ -76,6 +83,12 @@ const Register = () => {
             onClick={handleRegister}
           />
         </form>
+        <button
+          className="btn btn-primary form-control"
+          onClick={handleProvider}
+        >
+          Continue with Google
+        </button>
       </div>
     </div>
   );
