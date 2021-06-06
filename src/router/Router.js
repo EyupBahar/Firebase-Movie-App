@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 const AppRouter = () => {
   return (
     <Router>
@@ -7,3 +9,5 @@ const AppRouter = () => {
     </Router>
   );
 };
+
+export default AppRouter;
