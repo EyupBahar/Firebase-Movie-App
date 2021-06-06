@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/" style={{ color: "white" }}>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/" style={{ color: "white" }}>
             React Movie App
           </a>
           <div className="buttons">
@@ -19,7 +19,7 @@ const Navbar = () => {
             ) : (
               <button
                 type="button"
-                class="ms-2 btn btn-outline-light"
+                className="ms-2 btn btn-outline-light"
                 onClick={() => history.push("/login")}
               >
                 Login
@@ -29,7 +29,7 @@ const Navbar = () => {
             {currentUser ? (
               <button
                 type="button"
-                class="ms-2 btn btn-outline-light"
+                className="ms-2 btn btn-outline-light"
                 onClick={() => null}
               >
                 Logout
@@ -37,7 +37,7 @@ const Navbar = () => {
             ) : (
               <button
                 type="button"
-                class="ms-2 btn btn-outline-light"
+                className="ms-2 btn btn-outline-light"
                 onClick={() => history.push("/register")}
               >
                 Register

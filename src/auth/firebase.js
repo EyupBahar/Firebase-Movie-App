@@ -3,12 +3,12 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAs41IBACw797-tPt35lQ2q86NmuJ88Q3k",
-  authDomain: "fir-movie-app-37046.firebaseapp.com",
-  projectId: "fir-movie-app-37046",
-  storageBucket: "fir-movie-app-37046.appspot.com",
-  messagingSenderId: "379787303748",
-  appId: "1:379787303748:web:c59b84fc1c59fdd2f85511",
+  apiKey: "AIzaSyBYhSHEILWOei7TA_fJ_PrsDNN3JAVh4G8",
+  authDomain: "fir-app-28b99.firebaseapp.com",
+  projectId: "fir-app-28b99",
+  storageBucket: "fir-app-28b99.appspot.com",
+  messagingSenderId: "693771233000",
+  appId: "1:693771233000:web:bf5a161925021437d10b5d",
 });
 
 export const createUser = async (email, password, displayName, history) => {
