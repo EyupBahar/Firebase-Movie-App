@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Firebase-Movie-App/static/css/main.042251e3.chunk.css",
+    "main.js": "/Firebase-Movie-App/static/js/main.a4ceee95.chunk.js",
+    "main.js.map": "/Firebase-Movie-App/static/js/main.a4ceee95.chunk.js.map",
+    "runtime-main.js": "/Firebase-Movie-App/static/js/runtime-main.f5b99f60.js",
+    "runtime-main.js.map": "/Firebase-Movie-App/static/js/runtime-main.f5b99f60.js.map",
+    "static/js/2.9a70d64d.chunk.js": "/Firebase-Movie-App/static/js/2.9a70d64d.chunk.js",
+    "static/js/2.9a70d64d.chunk.js.map": "/Firebase-Movie-App/static/js/2.9a70d64d.chunk.js.map",
+    "index.html": "/Firebase-Movie-App/index.html",
+    "static/css/main.042251e3.chunk.css.map": "/Firebase-Movie-App/static/css/main.042251e3.chunk.css.map",
+    "static/js/2.9a70d64d.chunk.js.LICENSE.txt": "/Firebase-Movie-App/static/js/2.9a70d64d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f5b99f60.js",
+    "static/js/2.9a70d64d.chunk.js",
+    "static/css/main.042251e3.chunk.css",
+    "static/js/main.a4ceee95.chunk.js"
+  ]
+}
